@@ -15,7 +15,7 @@ const createGrid = (size) => {
     grid.appendChild(square);
   }
 }
-createGrid(5);
+createGrid(16);
 
 // Allow drawing on grid
 const drawSingle = function(e) {

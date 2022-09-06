@@ -95,9 +95,9 @@ button.active {
   display: grid;
   width: 400px;
   height: 400px;
-  grid-template-columns: repeat(16, minmax(1%, 1fr));
-  grid-template-rows: repeat(16, minmax(1%, 1fr));
-  place-items: center;
+  grid-template-columns: repeat(16, minmax(0, 1fr));
+  grid-template-rows: repeat(16, minmax(0, 1fr));
+  place-items: stretch;
   box-shadow: rgba(0, 0, 0, 0.2) 0px 18px 50px -10px;
 }
 
