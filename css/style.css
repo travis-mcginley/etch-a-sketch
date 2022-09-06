@@ -26,6 +26,8 @@ body {
   display: flex;
   place-items: center;
   gap: 50px;
+  flex-wrap: wrap;
+  place-content: center;
 }
 
 .controls {
