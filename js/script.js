@@ -1,14 +1,21 @@
 // Create squares for a 16x16 grid
-
 const createGrid = (size) => {
+  let grid = document.querySelector(".grid");
+  grid.style.gridTemplateColumns = grid.style.gridTemplateRows = `repeat(${size}, minmax(1%, 1fr))`;
+  
+  // Remove child nodes, if any
+  while (grid.firstChild) {
+    grid.removeChild(grid.firstChild);
+  }
+
+  // Create new child nodes
   for (let i = 0; i < (size*size); i++) {
-    let grid = document.querySelector(".grid");
     let square = document.createElement("div");
     square.classList.add("square");
     grid.appendChild(square);
   }
 }
-createGrid(64);
+createGrid(5);
 
 // Allow drawing on grid
 const drawSingle = function(e) {

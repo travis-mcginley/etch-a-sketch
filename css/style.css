@@ -93,21 +93,17 @@ button.active {
 
 .grid {
   display: grid;
-  /* border: 2px black solid;
-  background-color: black; */
   width: 400px;
   height: 400px;
-  grid-template-columns: repeat(64, minmax(1%, 1fr));
-  grid-template-rows: repeat(64, minmax(1%, 1fr));
+  grid-template-columns: repeat(16, minmax(1%, 1fr));
+  grid-template-rows: repeat(16, minmax(1%, 1fr));
   place-items: center;
-  /* padding: 10px; */
   box-shadow: rgba(0, 0, 0, 0.2) 0px 18px 50px -10px;
 }
 
 .square {
   background-color: white;
   padding: 5px;
-  text-align: center;
 }
 
 .footer {
