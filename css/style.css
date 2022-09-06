@@ -8,8 +8,11 @@ body {
 
 .grid {
   display: inline-grid;
+  border: 2px black solid;
+  background-color: black;
   grid-template-columns: repeat(16, 1fr);
   grid-template-rows: auto;
+  padding: 10px;
 }
 
 .square {
