@@ -9,6 +9,21 @@
   <link rel="stylesheet" href="./css/style.css">
 </head>
   <body>
+    <div class="header">Etch-A-Sketch</div>  
+    <div class="sketch-container">
+      <div class="controls">
+        <input id="color-picker" type="color">
+        <button id="color-button">Single Color Mode</button>
+        <button id="rbg-button">RGB Mode</button>
+        <button id="eraser-button">Eraser</button>
+        <button id="clear-button">Clear</button>
+        <div class="grid-size">
+          <div class="display">16 x 16</div>
+          <input id="slider" type="range" value="16" min="1" max="100">
+        </div>
+      </div>
       <div class="grid"></div>
+    </div>
+    <div class="footer">Copyright &copy; 2022 travis-mcginley</div>
   </body>
 </html>
