@@ -10,6 +10,14 @@ let createGrid = (size) => {
 }
 createGrid(64);
 
+// Allow drawing on grid
+let draw = function(e) {
+  let colorPicker = document.querySelector("#color-picker");
+  this.style.backgroundColor = colorPicker.value;
+}
+let grid = document.querySelectorAll(".grid > div");
+grid.forEach(cell => cell.addEventListener("mousedown", draw));
+
 // Show slider value above slider
 let sliderUpate = function(e) {
   let sliderDisplay = document.querySelector(".display");
