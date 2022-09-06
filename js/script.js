@@ -11,12 +11,59 @@ let createGrid = (size) => {
 createGrid(64);
 
 // Allow drawing on grid
-let draw = function(e) {
+let drawSingle = function(e) {
   let colorPicker = document.querySelector("#color-picker");
   this.style.backgroundColor = colorPicker.value;
 }
-let grid = document.querySelectorAll(".grid > div");
-grid.forEach(cell => cell.addEventListener("mousedown", draw));
+
+let drawRGB = function(e) {
+  const randomColor = Math.floor(Math.random()*16777215).toString(16);
+  this.style.backgroundColor = "#" + randomColor;
+}
+
+let erase = function(e) {
+  this.style.backgroundColor = "white";
+}
+
+let singleColorButton = document.querySelector("#color-button");
+let rgbButton = document.querySelector("#rbg-button");
+let eraserButton = document.querySelector("#eraser-button");
+
+singleColorButton.addEventListener("click", function(e) {
+  singleColorButton.classList.add("active");
+  rgbButton.classList.remove("active");
+  eraserButton.classList.remove("active");
+  
+  let grid = document.querySelectorAll(".grid > div");
+  grid.forEach(cell => cell.onclick = drawSingle);
+  grid.forEach(cell => cell.ondragover = drawSingle);
+  grid.forEach(cell => cell.ondragleave = drawSingle);
+  grid.forEach(cell => cell.ondragenter = drawSingle);
+});
+
+rgbButton.addEventListener("click", function(e) {
+  singleColorButton.classList.remove("active");
+  rgbButton.classList.add("active");
+  eraserButton.classList.remove("active");
+  
+  let grid = document.querySelectorAll(".grid > div");
+  grid.forEach(cell => cell.onclick = drawRGB);
+  grid.forEach(cell => cell.ondragover = drawRGB);
+  grid.forEach(cell => cell.ondragleave = drawRGB);
+  grid.forEach(cell => cell.ondragenter = drawRGB);
+});
+
+eraserButton.addEventListener("click", function(e) {
+  singleColorButton.classList.remove("active");
+  rgbButton.classList.remove("active");
+  eraserButton.classList.add("active");
+  
+  let grid = document.querySelectorAll(".grid > div");
+  grid.forEach(cell => cell.onclick = erase);
+  grid.forEach(cell => cell.ondragover = erase);
+  grid.forEach(cell => cell.ondragleave = erase);
+  grid.forEach(cell => cell.ondragenter = erase);
+});
 
 // Show slider value above slider
 let sliderUpate = function(e) {
