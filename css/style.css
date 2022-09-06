@@ -8,7 +8,7 @@ body {
 
 .grid {
   display: inline-grid;
-  grid-template-columns: repeat(16, 20px);
+  grid-template-columns: repeat(16, 1fr);
   grid-template-rows: auto;
 }
 
@@ -16,6 +16,10 @@ body {
   background-color: white;
   padding: 15px;
   text-align: center;
+}
+
+.square:hover {
+  background-color: black;
 }
 
 /* .square:nth-child(2) {
